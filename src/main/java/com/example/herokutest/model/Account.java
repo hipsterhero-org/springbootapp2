@@ -29,7 +29,7 @@ public class Account implements Serializable {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="account_number")
+	@Column(name="account_number", nullable = true)
 	private String accountNumber;
 
 	public Long getId() {
