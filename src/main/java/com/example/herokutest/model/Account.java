@@ -29,8 +29,8 @@ public class Account implements Serializable {
 	@Column(name="name")
 	private String name;
 	
-//	@Column(name="account_number", nullable = true)
-//	private String accountNumber;
+	@Column(name="account_number", nullable = true)
+	private String accountNumber;
 
 	public Long getId() {
 		return id;
@@ -56,8 +56,16 @@ public class Account implements Serializable {
 		this.name = name;
 	}
 
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", uuid=" + uuid + ", name=" + name + "]";
+		return "Account [id=" + id + ", uuid=" + uuid + ", name=" + name + ", accountNumber=" + accountNumber + "]";
 	}
 }
