@@ -17,7 +17,7 @@ public class HerokutestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Seconda applicazione deployata su Heroku con connessione al db !!!!");
+		logger.info("Xplenty app test ---> STARTED !!!!");
 	}
 
 }
