@@ -1,6 +1,7 @@
 package com.example.herokutest.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,9 +13,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="account")
 public class Account implements Serializable {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -5770718118881140736L;
 
@@ -22,14 +23,16 @@ public class Account implements Serializable {
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name="uuid")
-	private String uuid;
-	
+
 	@Column(name="name")
 	private String name;
-	
-	@Column(name="account_number", nullable = true)
+
+	@Column(name="isdeleted")
+	private Boolean isDeleted;
+	@Column(name="systemmodstamp")
+	private Date systemmodstamp;
+
+	@Column(name="accountnumber", nullable = true)
 	private String accountNumber;
 
 	public Long getId() {
@@ -38,14 +41,6 @@ public class Account implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
 	}
 
 	public String getName() {
@@ -63,9 +58,22 @@ public class Account implements Serializable {
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
+	public Boolean getDeleted() {
+		return isDeleted;
+	}
 
+	public void setDeleted(Boolean deleted) {
+		isDeleted = deleted;
+	}
+	public Date getSystemmodstamp() {
+		return systemmodstamp;
+	}
+
+	public void setSystemmodstamp(Date systemmodstamp) {
+		this.systemmodstamp = systemmodstamp;
+	}
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", uuid=" + uuid + ", name=" + name + ", accountNumber=" + accountNumber + "]";
+		return "Account [id=" + id + ", name=" + name + ", accountNumber=" + accountNumber + "]";
 	}
 }
