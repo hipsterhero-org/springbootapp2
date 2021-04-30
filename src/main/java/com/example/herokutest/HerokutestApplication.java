@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
 public class HerokutestApplication implements CommandLineRunner {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HerokutestApplication.class.getName());
