@@ -2,6 +2,7 @@ package com.example.herokutest.controller;
 
 import java.util.List;
 
+import com.example.herokutest.dao.AccountJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +18,17 @@ public class AccountController {
 	@Autowired
 	private AccountService accountService;
 
+	@Autowired
+	private AccountJpaRepository repository;
+
 	@GetMapping("/accounts")
 	public ResponseEntity<List<Account>> getAccounts(){
 		List<Account> accounts = accountService.getAll();
 		return new ResponseEntity<List<Account>>(accounts, HttpStatus.OK);
 	}
+	@GetMapping("/acc")
+	public List<Account> getAll(){
+		return repository.findAll();
+	}
+
 }
