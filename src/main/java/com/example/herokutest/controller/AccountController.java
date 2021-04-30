@@ -20,7 +20,7 @@ public class AccountController {
 
 	@GetMapping("/accounts")
 	public ResponseEntity<List<Account>> getAccounts(@RequestParam(value="page", required=false) Integer page,
-													 @RequestParam(value="offset", required=false) Integer offset){
+													 @RequestParam(value="size", required=false) Integer offset){
 		List<Account> accounts = accountService.getAll(page,offset);
 		return new ResponseEntity<List<Account>>(accounts, HttpStatus.OK);
 	}
