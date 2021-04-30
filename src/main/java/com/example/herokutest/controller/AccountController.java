@@ -26,9 +26,5 @@ public class AccountController {
 		List<Account> accounts = accountService.getAll();
 		return new ResponseEntity<List<Account>>(accounts, HttpStatus.OK);
 	}
-	@GetMapping("/acc")
-	public List<Account> getAll(){
-		return repository.findAll();
-	}
 
 }
