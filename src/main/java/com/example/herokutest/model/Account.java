@@ -23,10 +23,7 @@ public class Account implements Serializable {
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name="uuid")
-	private String uuid;
-	
+
 	@Column(name="name")
 	private String name;
 
@@ -44,14 +41,6 @@ public class Account implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
 	}
 
 	public String getName() {
@@ -85,6 +74,6 @@ public class Account implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", uuid=" + uuid + ", name=" + name + ", accountNumber=" + accountNumber + "]";
+		return "Account [id=" + id + ", name=" + name + ", accountNumber=" + accountNumber + "]";
 	}
 }
