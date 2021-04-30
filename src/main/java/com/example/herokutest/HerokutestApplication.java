@@ -20,7 +20,7 @@ public class HerokutestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Xplenty app integration ---> STARTED");
+		logger.info("Xplenty app integration ----> STARTED");
 	}
 
 }
