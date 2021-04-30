@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication
 @EnableSwagger2
 public class HerokutestApplication implements CommandLineRunner {
@@ -19,7 +21,7 @@ public class HerokutestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Xplenty app test ---> STARTED !!!!!!");
+		logger.info("Xplenty app integration ---> STARTED");
 	}
 
 }
