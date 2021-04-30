@@ -21,4 +21,12 @@ public class AccountService {
 	public List<Account> getAll() {
 		return accountRepo.findAll(PageRequest.of(0, 50)).getContent();
 	}
+	
+	@Transactional
+	public List<Account> getAll(Integer page, Integer size) {
+		if(page!=null)
+			return accountRepo.findAll(PageRequest.of(page, size)).getContent();
+		else
+			return this.getAll();
+	}
 }
