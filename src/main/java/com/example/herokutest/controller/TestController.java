@@ -22,4 +22,9 @@ public class TestController {
 		List<Student> list = studentService.getAll();
 		return new ResponseEntity<List<Student>>(list, HttpStatus.OK);
 	}
-}
+	@GetMapping("/test1")
+	public ResponseEntity<List<Student>> test1() {
+		List<Student> list = studentService.getAll();
+		return new ResponseEntity<List<Student>>(list, HttpStatus.OK);
+	}
+	}
