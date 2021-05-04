@@ -2,6 +2,8 @@ package com.example.herokutest.controller;
 
 import java.util.List;
 
+import com.example.herokutest.model.Account;
+import com.example.herokutest.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,9 @@ public class TestController {
 
 	@Autowired
 	private StudentService studentService;
+
+	@Autowired
+	private AccountService accountService;
 	
 	@GetMapping("/test")
 	public ResponseEntity<List<Student>> test() {
@@ -27,4 +32,9 @@ public class TestController {
 		List<Student> list = studentService.getAll();
 		return new ResponseEntity<List<Student>>(list, HttpStatus.OK);
 	}
+	@GetMapping("/accounts2")
+	public ResponseEntity<List<Account>> getAccounts2(){
+		List<Account> accounts = accountService.getAll();
+		return new ResponseEntity<List<Account>>(accounts, HttpStatus.OK);
 	}
+}
