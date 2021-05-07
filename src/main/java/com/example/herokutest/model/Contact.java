@@ -14,30 +14,12 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @Column(name="name")
     private String name;
     @Column(name="lastname")
     private String lastname;
     @Column(name="linenumber")
     private String linenumber;
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     @Column(name="address")
     private String address;
     @Column (name= "city")
@@ -66,6 +48,22 @@ public class Contact {
     public String getLineNumber() { return linenumber; }
 
     public void setLineNumber(String linenumber) { this.linenumber = linenumber; }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
 
     @Override
